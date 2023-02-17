@@ -1,14 +1,5 @@
 numpy>=1.10.2
 torch
-wandb
-pandas
-torchvision
+importlib_resources
 scikit-image
-matplotlib
-torch-summary
-wandb
-Pillow
-scikit-learn
-ipykernel
-distinctipy
-nbformat
+torchvision

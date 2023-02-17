@@ -6,7 +6,7 @@ import torchvision.transforms as transforms
 import os
 import numpy as np
 
-class CellModel(nn.Module):
+class _CellModel(nn.Module):
 
     def __init__(self):
         super().__init__()
@@ -37,7 +37,7 @@ class CellModel(nn.Module):
         return x
 
 PATH_LOAD = files('bn_classifier').joinpath('weights/best-augment.pth')
-net = CellModel()
+net = _CellModel()
 net.load_state_dict(torch.load(PATH_LOAD, map_location=torch.device('cpu')))
 net.double()
 
@@ -136,6 +136,14 @@ class BNClassifier:
 
     @staticmethod
     def multi_score_to_readable(multi_score, thresholds=np.array([0.5] * len(_binary_classes_readable))):
+        """Convert a multi-label score to a readable string
+        
+        Args:
+            multi_score (array-like): The multi-label score (length 6)
+
+        Returns:
+            str: The converted readable label
+        """
         if type(multi_score) == torch.Tensor:
             multi_score = multi_score.cpu().detach().numpy()
         if (multi_score - thresholds).max() < 0:
