@@ -24,7 +24,7 @@ setup(
     description='Brood nest classifier',
     author='Lino Steinhau',
     author_email='lino.steinhau@fu-berlin.de',
-    # url='https://github.com/BioroboticsLab/bb_utils/',
+    url='https://github.com/furnya/brood_nest_classifier',
     install_requires=reqs,
     dependency_links=dep_links,
     include_package_data=True,
@@ -32,20 +32,5 @@ setup(
     package_dir={'bn_classifier': 'bn_classifier'},
     package_data={'bn_classifier': [
         'weights/best-augment.pth'
-        # 'data/hatchdates2016.csv',
-        # 'data/foragergroups2016.csv',
-        # 'data/beenames.csv',
-        # 'data/fiducial_marker.npz',
-        # 'data/idmapping2019.csv'
-    ]},
-    entry_points={
-        'console_scripts': [
-            # 'bb_gt_to_hdf5 = bb_utils.scripts.gt_to_hdf5:run',
-            # 'shuffle_hdf5 = bb_utils.scripts.shuffle_hdf5:main',
-        ]
-    },
-    scripts=[
-        # 'scripts/shuffle_all_hdf5.sh',
-        # 'scripts/build_gt.sh',
-    ]
+    ]}
 )
