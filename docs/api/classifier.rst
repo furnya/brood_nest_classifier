@@ -1,8 +1,7 @@
-classifier
-==
+classifier module
+=================
 
-
-.. automodule:: bn_classifier.classifier
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: classifier
+   :members:
+   :undoc-members:
+   :show-inheritance:
