@@ -1,7 +1,7 @@
 training module
 ===============
 
-.. automodule:: training
+.. automodule:: bn_classifier.training
    :members:
    :undoc-members:
    :show-inheritance:

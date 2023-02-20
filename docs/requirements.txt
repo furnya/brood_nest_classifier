@@ -1,5 +1,0 @@
-numpy>=1.10.2
-torch
-importlib_resources
-scikit-image
-torchvision
