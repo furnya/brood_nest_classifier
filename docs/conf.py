@@ -6,6 +6,13 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+extensions = ['sphinx.ext.autodoc',
+    'sphinx.ext.viewcode']
+
+source_suffix = '.rst'
+
+master_doc = 'index'
+
 project = 'bn_classifier'
 copyright = '2023, Lino Steinhau'
 author = 'Lino Steinhau'
@@ -19,7 +26,7 @@ extensions = []
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
+pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
