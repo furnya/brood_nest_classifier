@@ -10,7 +10,7 @@ Welcome to bn_classifier's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   api/classifier
 
 Indices and tables
 ==================
