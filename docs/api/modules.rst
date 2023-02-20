@@ -5,4 +5,3 @@ bn_classifier
    :maxdepth: 4
 
    classifier
-   training

@@ -11,7 +11,6 @@ Welcome to bn_classifier's documentation!
    :caption: Contents:
 
    api/classifier
-   api/training
    api/modules
 
 Indices and tables

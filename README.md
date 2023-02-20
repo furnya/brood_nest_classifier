@@ -1,5 +1,7 @@
 # brood_nest_classifier
 
+[![Documentation Status](https://readthedocs.org/projects/bn-classifier/badge/?version=latest)](http://bn-classifier.readthedocs.io/en/latest/?badge=latest)
+
 This repository holds a classifier for brood nest backside scans.
 
 Installation
