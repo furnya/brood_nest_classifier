@@ -97,7 +97,6 @@ ENV/
 .idea
 
 img
-data
 .vscode
 wandb
 nets

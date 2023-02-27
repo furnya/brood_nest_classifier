@@ -379,7 +379,7 @@ class LabelboxDataset(Dataset):
             multi_score = multi_score.cpu().detach().numpy()
         if (multi_score - thresholds).max() < 0:
             return "(unknown)"
-        if np.argmax(multi_score) == LabelboxDataset.binary_classes_readable.index("empty"):
+        if np.argmax(multi_score - thresholds) == LabelboxDataset.binary_classes_readable.index("empty"):
             return "(empty)"
         return (
             "(" + ", ".join([LabelboxDataset.binary_classes_readable[i] for i, x in enumerate(multi_score)
@@ -658,7 +658,7 @@ if use_wandb:
         wandb.finish()
     wandb.init(project="honeycomb-recognition", entity="lino-steinhau", config=wandb_config)
 
-PATH = f'../../master-thesis-honeycombs/nets/cifar_net_{int(time.time())}.pth'
+PATH = f'./cifar_net_{int(time.time())}.pth'
 net = net.float()
 try:
     net_summary = summary(net, torch.zeros((1, 3, 64, 64)).to(device), max_depth=4)
@@ -670,7 +670,7 @@ except:
     pass
 net = net.double()
 ts = int(time.time())
-summary_path = f'../../master-thesis-honeycombs/nets/net_summary_{ts}.txt'
+summary_path = f'./net_summary_{ts}.txt'
 with open(summary_path, 'w', encoding='utf-8') as f:
     f.write(str(net)+'\n')
     f.write(str(net_summary))
@@ -680,12 +680,8 @@ if use_wandb:
     wandb_model_summary = wandb.Artifact(f"net-summary-{ts}", type="model-summary")
     wandb_model_summary.add_file(summary_path)
     wandb.log_artifact(wandb_model_summary)
-    script_path = f'../../master-thesis-honeycombs/nets/script.zip'
-    filenames = [sys.argv[0], 'dataset.py', 'model.py', 'utils.py']
-    with zipfile.ZipFile(script_path, mode="w") as archive:
-        for filename in filenames:
-            archive.write(filename)
-    wandb_script = wandb.Artifact(f"script-zip", type="python scripts in zip file")
+    script_path = f'./{sys.argv[0]}'
+    wandb_script = wandb.Artifact(f"script", type="python script")
     wandb_script.add_file(script_path)
     wandb.log_artifact(wandb_script)
     wandb.watch(net, log_freq=1000, log="all")

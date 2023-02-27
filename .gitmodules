@@ -1,0 +1,3 @@
+[submodule "bn_classifier/bn_classifier_data"]
+	path = bn_classifier/bn_classifier_data
+	url = https://github.com/furnya/bn_classifier_data

@@ -185,7 +185,7 @@ class BNClassifier:
             multi_score = multi_score.cpu().detach().numpy()
         if (multi_score - thresholds).max() < 0:
             return "(unknown)"
-        if np.argmax(multi_score) == BNClassifier.binary_classes_readable.index("empty"):
+        if np.argmax(multi_score - thresholds) == BNClassifier.binary_classes_readable.index("empty"):
             return "(empty)"
         return (
             "(" + ", ".join([BNClassifier.binary_classes_readable[i] for i, x in enumerate(multi_score)

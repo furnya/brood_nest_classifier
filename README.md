@@ -30,3 +30,7 @@ Output:
        [468.75, 693.75],
        [793.75, 693.75]]), [0, 1, 0, 1, 0, 0, 1, 0], ['(empty)', '(egg)'])
 ```
+
+Data
+================
+The image data used for the training is located in the repository: https://github.com/furnya/bn_classifier_data
